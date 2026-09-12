@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         val listViewVentas = findViewById<ListView>(R.id.ListViewVentas)
         val dbHelper = DatabaseHelper(this)
-        val listaVentasTexto = ArrayList<String>()
+
+        val listaVentas = ArrayList<Venta>()
         val cursor = dbHelper.obtenerTodasLasVentas()
 
         if (cursor.moveToFirst()){
@@ -28,15 +29,14 @@ class MainActivity : AppCompatActivity() {
                 val cantidad = cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
                 val tipo = cursor.getString(cursor.getColumnIndexOrThrow("tipo"))
                 val fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha_venta"))
-                val item = "[$codigo] $nombre\nPrecio: S/$precio | Cant: $cantidad | Tipo: $tipo\nFecha: $fecha"
-                listaVentasTexto.add(item)
+                listaVentas.add(Venta(codigo, nombre, precio, cantidad, tipo, fecha))
             }while (cursor.moveToNext())
         }else {
             Toast.makeText(this, "No se encontraron ventas", Toast.LENGTH_LONG).show()
         }
         cursor.close()
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaVentasTexto)
+        val adapter = VentaAdapter(this, listaVentas)
         listViewVentas.adapter = adapter
 
 
