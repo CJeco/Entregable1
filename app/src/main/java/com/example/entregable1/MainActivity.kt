@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 val precio = cursor.getDouble(cursor.getColumnIndexOrThrow("precio"))
                 val cantidad = cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
                 val tipo = cursor.getString(cursor.getColumnIndexOrThrow("tipo"))
-                val fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha"))
+                val fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha_venta"))
                 val item = "[$codigo] $nombre\nPrecio: S/$precio | Cant: $cantidad | Tipo: $tipo\nFecha: $fecha"
                 listaVentasTexto.add(item)
             }while (cursor.moveToNext())
