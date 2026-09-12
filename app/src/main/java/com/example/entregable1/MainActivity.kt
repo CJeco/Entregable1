@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val listViewVentas = findViewById<ListView>(R.id.listViewVentas)
+        val listViewVentas = findViewById<ListView>(R.id.ListViewVentas)
         val dbHelper = DatabaseHelper(this)
         val listaVentasTexto = ArrayList<String>()
         val cursor = dbHelper.obtenerTodasLasVentas()
