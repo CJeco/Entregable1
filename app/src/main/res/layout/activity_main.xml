@@ -13,15 +13,22 @@
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:padding="18dp"
         android:text="Registro de Ventas - Todo Barato"
-        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:gravity="center"/>
 
     <ListView
         android:id="@+id/ListViewVentas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingVertical="8dp"
+        android:scrollbars="vertical"/>
 
 </LinearLayout>
