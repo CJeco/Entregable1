@@ -53,7 +53,6 @@ class DatabaseHelper (private val context: Context) :
             val db = readableDatabase
             return db.rawQuery("SELECT * FROM ventas WHERE tipo = ?", arrayOf(tipo))
         }
-
     }
 
 
